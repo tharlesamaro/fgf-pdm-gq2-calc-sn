@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 
-  @author: tharlesamaro
+  @author: tharlesamaro<contato@tharlesamaro.com>
 -->
 <ion-header>
 
@@ -15,70 +15,79 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-list>
 
     <ion-item>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" placeholder="0" name="display" [(ngModel)]="result" readonly></ion-input>
     </ion-item>
 
   </ion-list>
 
   <div style="margin-top: 50px">
+
     <div class="row">
       <div class="col col-20 col-offset-10">
-        <button ion-button block>1</button>
+        <button ion-button block (click)="addValue('1')">1</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>2</button>
+        <button ion-button block (click)="addValue('2')">2</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>3</button>
+        <button ion-button block (click)="addValue('3')">3</button>
       </div>
       <div class="col col-20">
-        <button ion-button block color="secondary">-</button>
+        <button ion-button block color="secondary" (click)="addValue('-')">-</button>
       </div>
     </div>
+
     <div class="row">
       <div class="col col-20 col-offset-10">
-        <button ion-button block>4</button>
+        <button ion-button block (click)="addValue('4')">4</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>5</button>
+        <button ion-button block (click)="addValue('5')">5</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>6</button>
+        <button ion-button block (click)="addValue('6')">6</button>
       </div>
       <div class="col col-20">
-        <button ion-button block color="secondary">+</button>
+        <button ion-button block color="secondary" (click)="addValue('+')">+</button>
       </div>
     </div>
+
     <div class="row">
       <div class="col col-20 col-offset-10">
-        <button ion-button block>7</button>
+        <button ion-button block (click)="addValue('7')">7</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>8</button>
+        <button ion-button block (click)="addValue('8')">8</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>9</button>
+        <button ion-button block (click)="addValue('9')">9</button>
       </div>
       <div class="col col-20">
-        <button ion-button block color="secondary">/</button>
+        <button ion-button block color="secondary" (click)="addValue('/')">/</button>
       </div>
     </div>
+
     <div class="row">
       <div class="col col-20 col-offset-10">
-        <button ion-button block color="danger">CE</button>
+        <button ion-button block color="danger" (click)="addValue('CE')">CE</button>
       </div>
       <div class="col col-20">
-        <button ion-button block>0</button>
+        <button ion-button block (click)="addValue('0')">0</button>
       </div>
       <div class="col col-20">
-        <button ion-button block color="danger">=</button>
+        <button ion-button block color="secondary" (click)="addValue('.')">.</button>
       </div>
       <div class="col col-20">
-        <button ion-button block color="secondary">*</button>
+        <button ion-button block color="secondary" (click)="addValue('*')">*</button>
       </div>
     </div>
+
+    <button ion-button full color="danger" (click)="addValue('=')">=</button>
+
   </div>
+
 </ion-content>
