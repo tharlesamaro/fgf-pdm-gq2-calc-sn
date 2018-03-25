@@ -7,12 +7,98 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Conversion</ion-title>
+    <ion-title>Conversão</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Escolha a base</ion-label>
+      <ion-select [(ngModel)]="currentBase" (ionChange)="buttonDisplay()">
+        <ion-option value="2">Binária</ion-option>
+        <ion-option value="8">Octal</ion-option>
+        <ion-option value="10">Decimal</ion-option>
+        <ion-option value="16">Hexadecimal</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="0" name="display" readonly></ion-input>
+    </ion-item>
+
+    <div style="margin-top: 20px" id="teclado">
+
+      <div class="row">
+        <div class="col col-20 col-offset-10">
+          <button ion-button block class="binary octal decimal hexadecimal">0</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="binary octal decimal hexadecimal">1</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="octal decimal hexadecimal no-binary">2</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="octal decimal hexadecimal no-binary">3</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-20 col-offset-10">
+          <button ion-button block class="octal decimal hexadecimal no-binary">4</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="octal decimal hexadecimal no-binary">5</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="octal decimal hexadecimal no-binary">6</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="octal decimal hexadecimal no-binary">7</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-20 col-offset-10">
+          <button ion-button block class="decimal hexadecimal no-binary no-octal">8</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="decimal hexadecimal no-binary no-octal">9</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">A</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">B</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-20 col-offset-10">
+          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">C</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">D</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">E</button>
+        </div>
+        <div class="col col-20">
+          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">F</button>
+        </div>
+      </div>
+
+      <button ion-button full color="danger">Converter</button>
+
+    </div>
+
+  </ion-list>
 
 </ion-content>
