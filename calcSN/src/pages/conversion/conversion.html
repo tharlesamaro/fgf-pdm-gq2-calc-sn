@@ -30,68 +30,68 @@
   <ion-list>
 
     <ion-item>
-      <ion-input type="text" placeholder="0" name="display" readonly></ion-input>
+      <ion-input type="text" placeholder="0" readonly></ion-input>
     </ion-item>
 
-    <div style="margin-top: 20px" id="teclado">
+    <div style="margin-top: 20px">
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block class="binary octal decimal hexadecimal">0</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn0To1() == false, 'is-visible': showBtn0To1() == true}">0</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="binary octal decimal hexadecimal">1</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn0To1() == false, 'is-visible': showBtn0To1() == true}">1</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="octal decimal hexadecimal no-binary">2</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}">2</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="octal decimal hexadecimal no-binary">3</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}">3</button>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block class="octal decimal hexadecimal no-binary">4</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}">4</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="octal decimal hexadecimal no-binary">5</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}">5</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="octal decimal hexadecimal no-binary">6</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}">6</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="octal decimal hexadecimal no-binary">7</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}">7</button>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block class="decimal hexadecimal no-binary no-octal">8</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn8To9() == false, 'is-visible': showBtn8To9() == true}">8</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="decimal hexadecimal no-binary no-octal">9</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtn8To9() == false, 'is-visible': showBtn8To9() == true}">9</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">A</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}">A</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">B</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}">B</button>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">C</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}">C</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">D</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}">D</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">E</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}">E</button>
         </div>
         <div class="col col-20">
-          <button ion-button block class="hexadecimal no-binary no-octal no-decimal">F</button>
+          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}">F</button>
         </div>
       </div>
 

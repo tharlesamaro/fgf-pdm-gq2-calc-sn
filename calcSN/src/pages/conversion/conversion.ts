@@ -16,61 +16,83 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ConversionPage {
 
   public currentBase: string;
+  public isBinary: boolean;
+  public isOctal: boolean;
+  public isDecimal: boolean;
+  public isHexadecimal: boolean;
    
   buttonDisplay = () => {
     
     if (this.currentBase == "2") {
-
-      let btnNoBinary = document.getElementsByClassName("no-binary");
-      let btnIsBinary = document.getElementsByClassName("binary");
-
-      for(let i = 0; i < btnNoBinary.length; i++){
-        btnNoBinary[i].style.display = "none";
-      }
-
-      for(let i = 0; i < btnIsBinary.length; i++) {
-        btnIsBinary[i].style.display = "inline-block";
-      }
+      this.isBinary =  true;
+    } else {
+      this.isBinary = false;
     }
-    
+
     if (this.currentBase == "8") {
-
-      let btnNoOctal = document.getElementsByClassName("no-octal");
-      let btnIsOctal = document.getElementsByClassName("octal");
-
-      for(let i = 0; i < btnNoOctal.length; i++) {
-        btnNoOctal[i].style.display = "none";
-      }
-
-      for(let i = 0; i < btnIsOctal.length; i++) {
-        btnIsOctal[i].style.display = "inline-block";
-      }
+      this.isOctal =  true;
+    } else {
+      this.isOctal = false;
     }
 
     if (this.currentBase == "10") {
-
-      let btnNoDecimal = document.getElementsByClassName("no-decimal");
-      let btnIsDecimal = document.getElementsByClassName("decimal");
-
-      for(let i = 0; i < btnNoDecimal.length; i++) {
-        btnNoDecimal[i].style.display = "none";
-      }
-
-      for(let i = 0; i < btnIsDecimal.length; i++) {
-        btnIsDecimal[i].style.display = "inline-block";
-      }
+      this.isDecimal =  true;
+    } else {
+      this.isDecimal = false;
     }
 
     if (this.currentBase == "16") {
-
-      let btnIsHexadecimal = document.getElementsByClassName("hexadecimal");
-
-      for(let i = 0; i < btnIsHexadecimal.length; i++) {
-        btnIsHexadecimal[i].style.display = "inline-block";
-      }
-    }
+      this.isHexadecimal =  true;
+    } else {
+      this.isHexadecimal = false;
+    }  
 
   }
+
+  showBtn0To1 = () => {
+    
+    let allAreTrue = (this.isBinary == true) || (this.isOctal == true) || (this.isDecimal == true) || (this.isHexadecimal == true);
+    
+    if (allAreTrue) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  showBtn2To7 = () => {
+    
+    let binaryIsFalse = (this.isBinary == false) && ((this.isOctal == true) || (this.isDecimal == true) || (this.isHexadecimal == true));
+    
+    if (binaryIsFalse) {
+      return true;  
+    } else {
+      return false;
+    }
+  }
+
+  showBtn8To9 = () => {
+
+    let binaryAndOctalAreFalse = (((this.isBinary == false) && (this.isOctal == false)) && ((this.isDecimal == true) || (this.isHexadecimal == true))); 
+
+    if (binaryAndOctalAreFalse) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  showBtnAToF = () => {
+
+    let hexadecimalIsTrue = (((this.isBinary == false) && (this.isOctal == false) && (this.isDecimal == false)) && (this.isHexadecimal == true));
+
+    if (hexadecimalIsTrue) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

@@ -1,5 +1,10 @@
 page-conversion {
-    .hexadecimal {
+    
+    .not-visible {
         display: none;
+    }
+
+    .is-visible {
+        display: inline-block;
     }
 }
