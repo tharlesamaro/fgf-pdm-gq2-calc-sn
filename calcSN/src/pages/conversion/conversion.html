@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ConversionPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -11,7 +5,6 @@
   </ion-navbar>
 
 </ion-header>
-
 
 <ion-content padding>
 
@@ -37,61 +30,105 @@
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block [ngClass]="{'not-visible': showBtn0To1() == false, 'is-visible': showBtn0To1() == true}" (click)="addValue('0')">0</button>
+          <button ion-button block [ngClass]="{'not-visible': !showBtn0To1(), 'is-visible': showBtn0To1()}"
+                  (click)="addValue('0')">0
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn0To1() == false, 'is-visible': showBtn0To1() == true}" (click)="addValue('1')">1</button>
+          <button ion-button block [ngClass]="{'not-visible': !showBtn0To1(), 'is-visible': showBtn0To1()}"
+                  (click)="addValue('1')">1
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}" (click)="addValue('2')">2</button>
+          <button ion-button block [ngClass]="{'not-visible': !showBtn2To7(), 'is-visible': showBtn2To7()}"
+                  (click)="addValue('2')">2
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}" (click)="addValue('3')">3</button>
+          <button ion-button block [ngClass]="{'not-visible': !showBtn2To7(), 'is-visible': showBtn2To7()}"
+                  (click)="addValue('3')">3
+          </button>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}" (click)="addValue('4')">4</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtn2To7(), 'is-visible': showBtn2To7()}"
+                  (click)="addValue('4')">4
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}" (click)="addValue('5')">5</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtn2To7(), 'is-visible': showBtn2To7()}"
+                  (click)="addValue('5')">5
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}" (click)="addValue('6')">6</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtn2To7(), 'is-visible': showBtn2To7()}"
+                  (click)="addValue('6')">6
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn2To7() == false, 'is-visible': showBtn2To7() == true}" (click)="addValue('7')">7</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtn2To7(), 'is-visible': showBtn2To7()}"
+                  (click)="addValue('7')">7
+          </button>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block [ngClass]="{'not-visible': showBtn8To9() == false, 'is-visible': showBtn8To9() == true}" (click)="addValue('8')">8</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtn8To9(), 'is-visible': showBtn8To9()}"
+                  (click)="addValue('8')">8
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtn8To9() == false, 'is-visible': showBtn8To9() == true}" (click)="addValue('9')">9</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtn8To9(), 'is-visible': showBtn8To9()}"
+                  (click)="addValue('9')">9
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}" (click)="addValue('A')">A</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtnAToF(), 'is-visible': showBtnAToF()}"
+                  (click)="addValue('A')">A
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}" (click)="addValue('B')">B</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtnAToF(), 'is-visible': showBtnAToF()}"
+                  (click)="addValue('B')">B
+          </button>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-20 col-offset-10">
-          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}" (click)="addValue('C')">C</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtnAToF(), 'is-visible': showBtnAToF()}"
+                  (click)="addValue('C')">C
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}" (click)="addValue('D')">D</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtnAToF(), 'is-visible': showBtnAToF()}"
+                  (click)="addValue('D')">D
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}" (click)="addValue('E')">E</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtnAToF(), 'is-visible': showBtnAToF()}"
+                  (click)="addValue('E')">E
+          </button>
         </div>
         <div class="col col-20">
-          <button ion-button block [ngClass]="{'not-visible': showBtnAToF() == false, 'is-visible': showBtnAToF() == true}" (click)="addValue('F')">F</button>
+          <button ion-button block
+                  [ngClass]="{'not-visible': !showBtnAToF(), 'is-visible': showBtnAToF()}"
+                  (click)="addValue('F')">F
+          </button>
         </div>
       </div>
 
@@ -106,7 +143,7 @@
 
     </div>
 
-    <div [ngClass]="{'not-visible': currentBaseNotNull() == false, 'is-visible': currentBaseNotNull() == true}">
+    <div [ngClass]="{'not-visible': !currentBaseNotNull(), 'is-visible': currentBaseNotNull()}">
 
       <ion-item>
         <ion-label floating>Binário:</ion-label>
@@ -124,9 +161,9 @@
         <ion-label floating>Hexadecimal:</ion-label>
         <ion-input type="text" [(ngModel)]="resultHexadecimal" readonly></ion-input>
       </ion-item>
+      <ion-item class="not-visible"></ion-item>
 
     </div>
-
 
   </ion-list>
 

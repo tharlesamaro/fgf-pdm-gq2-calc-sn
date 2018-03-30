@@ -1,13 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-
-/**
- * Generated class for the CalculatorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- * @author: tharlesamaro<contato@tharlesamaro.com>
- */
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -16,55 +8,53 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class CalculatorPage {
 
-  result = '';
+  result: string = '';
 
-  addValue = (input) => {
+  addValue(input): void {
 
-    if (input == 'CE') { 
-      this.result = '';
-    }
-
-    else if (input == '=') {
-      if (this.result == '') {
-        return;
-      }
-      try { 
-        this.result = eval(this.result);
-      } catch (error) {
-        this.showMessage();
+    switch (input) {
+      case 'CE':
         this.result = '';
-      }
-    }
+        break;
 
-    else if (input == '.') {      
-      
-      let emptyResult = this.result == '';
-      let lastCharacter = this.result.charAt(this.result.length - 1);
-      let lastDigitIsOperator = (lastCharacter == '+') || (lastCharacter == '-') || (lastCharacter == '*') || (lastCharacter == '/');
-      
-      if (emptyResult || lastDigitIsOperator) {
-        this.result += '0.';
-      } else { 
+      case '=':
+        if (this.result == '') {
+          return;
+        }
+        try {
+          this.result = eval(this.result);
+        } catch (error) {
+          this.showMessage();
+          this.result = '';
+        }
+        break;
+
+      case '.':
+        let emptyResult: boolean;
+        let lastCharacter: string;
+        let lastDigitIsOperator: boolean;
+        emptyResult = this.result == '';
+        lastCharacter = this.result.charAt(this.result.length - 1);
+        lastDigitIsOperator = lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '*' || lastCharacter == '/';
+        this.result += emptyResult || lastDigitIsOperator ? '0.' : input;
+        break;
+
+      default:
         this.result += input;
-      }      
+        break;
     }
-
-    else { this.result += input }
   }
 
-  showMessage() {
+  showMessage(): void {
     this.alertCtrl.create({
-      title: 'Operação inválida',
-      subTitle: 'Por favor, tente novamente...',
+      title: 'Operação inválida.',
+      subTitle: 'Por favor, tente novamente.',
       buttons: ['Ok']
     }).present();
   }
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private alertCtrl: AlertController
-  ) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalculatorPage');
