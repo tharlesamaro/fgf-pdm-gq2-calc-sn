@@ -68,14 +68,11 @@ export class ConversionPage {
 
     if (currentBaseValueNotNull) {
       if (value == '' || value == null) {
-
         this.resultBinary = '';
         this.resultDecimal = '';
         this.resultOctal = '';
         this.resultHexadecimal = '';
-
       } else {
-
         switch (this.currentBase) {
           case "2":
             decimal = parseInt(value, 2);
