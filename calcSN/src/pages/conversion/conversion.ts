@@ -7,7 +7,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
   templateUrl: 'conversion.html'
 })
 export class ConversionPage {
-
+  
   private isBinary: boolean;
   private isOctal: boolean;
   private isDecimal: boolean;
@@ -19,6 +19,9 @@ export class ConversionPage {
   public resultDecimal: string;
   public resultHexadecimal: string;
 
+  // a função irá ser chamada toda vez que o label do usuário for alterado
+  // primeiro limpa os dados das variaveis de resultado e dados de entrada da conversão
+  // em seguida verifica qual a base numérica escolhida(2,8,10,16) e atribui o valor true ou false para as variaveis correspondentes a base numerica escolhida
   buttonDisplay(): void {
 
     this.conversionInput = '';
@@ -33,10 +36,13 @@ export class ConversionPage {
     this.isHexadecimal = this.currentBase == "16";
   }
 
+  //função que verifica se a base escolhida ainda não foi selecionada
   currentBaseNotNull(): boolean {
     return !(this.currentBase == "" || this.currentBase == null);
   }
 
+  // as funções "showBtn" fazem algumas validações e retorna true ou false. Isso no HTML irá ser usado para definir se o botão
+  // deve ser mostrado ou não em relação a base numérica escolhida
   showBtn0To1(): boolean {
     return this.isBinary || this.isOctal || this.isDecimal || this.isHexadecimal;
   }
@@ -53,10 +59,12 @@ export class ConversionPage {
     return !this.isBinary && !this.isOctal && !this.isDecimal && this.isHexadecimal;
   }
 
+  //recebe a entrada do usuário como paramentro(input) e concatena o mesmo na variável "conversionInput"
   addValue(input): void {
     this.conversionInput += input;
   }
 
+  // função que irá realizar as conversões de base numéricas
   conversion(): void {
 
     let currentBaseValueNotNull: boolean;
@@ -99,6 +107,7 @@ export class ConversionPage {
     }
   }
 
+  // função que irá limpar a tela(valores do input e resultados)
   clear(): void {
     this.conversionInput = "";
     this.resultBinary = "";
