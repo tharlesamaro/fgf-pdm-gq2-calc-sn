@@ -25,7 +25,6 @@ export class CalculatorPage {
         try {
           this.result = eval(this.result);
         } catch (error) {
-          // caso a expressão não possa ser avaliada pela função, irá chamar a mensagem de erro e deixar o valor da variável "result" vazio
           this.showMessage();
           this.result = '';
         }
